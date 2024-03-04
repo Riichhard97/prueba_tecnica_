@@ -10,3 +10,15 @@ C:\Users\Gamer\source\repos\PruebaTecnica\ClbModPT\obj\Debug\net5.0\ClbModPT.dll
 C:\Users\Gamer\source\repos\PruebaTecnica\ClbModPT\obj\Debug\net5.0\refint\ClbModPT.dll
 C:\Users\Gamer\source\repos\PruebaTecnica\ClbModPT\obj\Debug\net5.0\ClbModPT.pdb
 C:\Users\Gamer\source\repos\PruebaTecnica\ClbModPT\obj\Debug\net5.0\ref\ClbModPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\bin\Debug\net5.0\ClbModPT.deps.json
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\bin\Debug\net5.0\ClbModPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\bin\Debug\net5.0\ClbModPT.pdb
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\ClbModPT.csproj.AssemblyReference.cache
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\ClbModPT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\ClbModPT.AssemblyInfoInputs.cache
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\ClbModPT.AssemblyInfo.cs
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\ClbModPT.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\ClbModPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\refint\ClbModPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\ClbModPT.pdb
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbModPT\obj\Debug\net5.0\ref\ClbModPT.dll

@@ -15,3 +15,20 @@ C:\Users\Gamer\source\repos\PruebaTecnica\ClbNegPT\obj\Debug\net5.0\ClbNegPT.dll
 C:\Users\Gamer\source\repos\PruebaTecnica\ClbNegPT\obj\Debug\net5.0\refint\ClbNegPT.dll
 C:\Users\Gamer\source\repos\PruebaTecnica\ClbNegPT\obj\Debug\net5.0\ClbNegPT.pdb
 C:\Users\Gamer\source\repos\PruebaTecnica\ClbNegPT\obj\Debug\net5.0\ref\ClbNegPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\bin\Debug\net5.0\ClbNegPT.deps.json
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\bin\Debug\net5.0\ClbNegPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\bin\Debug\net5.0\ClbNegPT.pdb
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\bin\Debug\net5.0\ClbDatPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\bin\Debug\net5.0\ClbModPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\bin\Debug\net5.0\ClbDatPT.pdb
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\bin\Debug\net5.0\ClbModPT.pdb
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ClbNegPT.csproj.AssemblyReference.cache
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ClbNegPT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ClbNegPT.AssemblyInfoInputs.cache
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ClbNegPT.AssemblyInfo.cs
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ClbNegPT.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ClbNegPT.csproj.CopyComplete
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ClbNegPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\refint\ClbNegPT.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ClbNegPT.pdb
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\ClbNegPT\obj\Debug\net5.0\ref\ClbNegPT.dll
