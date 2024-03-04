@@ -1,8 +1,8 @@
 <div class="card">
-    <img [src]="article.imagen" class="card-img-top" alt="Imagen del artículo">
+    <img [src]="urlApiImage+ article.image" class="card-img-top" alt="Imagen del artículo">
     <div class="card-body">
         <h5 class="card-title">{{ article.descripcion }}</h5>
-        <p class="card-text">Precio: {{ article.precio | currency}}</p>
+        <p class="card-text">Precio: {{ article.precio | currency:"MXN":"symbol"}}</p>
         <p class="card-text">Stock: {{ article.cantidad }}</p>
         <button class="btn btn-primary" (click)="addToCart(article)">Agregar al carrito</button>
     </div>

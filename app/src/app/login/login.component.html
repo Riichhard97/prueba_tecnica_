@@ -8,12 +8,14 @@
                 <div class="card-body">
                     <form>
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                            <label for="correo">Correo</label>
+                            <input type="text" class="form-control" id="correo" [(ngModel)]="user.correo" name="correo"
+                                placeholder="Enter correo" required>
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" [(ngModel)]="user.password"
+                                name="password" placeholder="Contraseña" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" (click)="login()">Login</button>
                     </form>

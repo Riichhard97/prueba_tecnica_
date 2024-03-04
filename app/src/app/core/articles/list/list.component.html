@@ -16,7 +16,7 @@
                 <td>{{ article.codigo }}</td>
                 <td>{{ article.descripcion }}</td>
                 <td>{{ article.precio }}</td>
-                <td><img src="{{ article.image }}" alt="Imagen del artículo" style="max-width: 100px;"></td>
+                <td><img src="{{urlApiImg+article.image }}" alt="Imagen del artículo" style="max-width: 100px;"></td>
                 <td>
                     <button class="btn btn-primary mr-2" (click)="goToEdit(article)">Editar</button>
                     <button class="btn btn-danger" (click)="deleteArticle(article)">Eliminar</button>

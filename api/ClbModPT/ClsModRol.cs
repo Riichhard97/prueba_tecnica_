@@ -8,6 +8,6 @@ namespace ClbModPT
 {
     public class ClsModRol : ClsModBase
     {
-        public string Nombre { get; set; }
+        public string Rol { get; set; }
     }
 }

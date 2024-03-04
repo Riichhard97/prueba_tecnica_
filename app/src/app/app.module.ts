@@ -19,6 +19,13 @@ import { AddArticleComponent } from './core/store/components/add-article/add-art
 import { ModalComponent } from './components/modal/modal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClienteNewComponent } from './core/clientes/new/new.component';
+import { UserNewComponent } from './core/usuarios/new/new.component';
+import { UserListComponent } from './core/usuarios/list/list.component';
+import locale from '@angular/common/locales/es-MX';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(locale, 'es');
 
 @NgModule({
   declarations: [
@@ -37,6 +44,8 @@ import { ClienteNewComponent } from './core/clientes/new/new.component';
     CartComponent,
     AddArticleComponent,
     ModalComponent,
+    UserNewComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,7 @@ import { ClienteNewComponent } from './core/clientes/new/new.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es-MX' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

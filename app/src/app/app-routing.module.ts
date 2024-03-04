@@ -10,26 +10,38 @@ import { CreateArticleComponent } from './core/articles/new/new.component';
 import { MarketComponent } from './core/market/market.component';
 import { CartComponent } from './core/cart/cart.component';
 import { ClienteNewComponent } from './core/clientes/new/new.component';
+import { UserNewComponent } from './core/usuarios/new/new.component';
+import { UserListComponent } from './core/usuarios/list/list.component';
+import { authGuard } from './guard/auth.guard';
+import { RolEnum } from './models/enums/role-enum';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'customer-list', component: CilenteListComponent },
-  { path: 'create-customer', component: ClienteNewComponent },
-  { path: 'create-customer/:id', component: ClienteNewComponent },
+  { path: 'home', component: HomeComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador, RolEnum.Cliente] } },
 
-  { path: 'store-list', component: StoreListComponent },
-  { path: 'create-store', component: CreateStoreComponent },
-  { path: 'create-store/:id', component: CreateStoreComponent },
+  //Admin
+  { path: 'customer-list', component: CilenteListComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+  { path: 'create-customer', component: ClienteNewComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+  { path: 'create-customer/:id', component: ClienteNewComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
 
-
-  { path: 'articles-list', component: ArticleListComponent },
-  { path: 'create-article', component: CreateArticleComponent },
-  { path: 'edit-article/:id', component: CreateArticleComponent },
+  { path: 'store-list', component: StoreListComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+  { path: 'create-store', component: CreateStoreComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+  { path: 'create-store/:id', component: CreateStoreComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
 
 
-  { path: 'market', component: MarketComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'articles-list', component: ArticleListComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+  { path: 'create-article', component: CreateArticleComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+  { path: 'edit-article/:id', component: CreateArticleComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+
+  { path: 'usuarios', component: UserListComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+
+  { path: 'usuario-nuevo', component: UserNewComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+  { path: 'usuario-edicion/:id', component: UserNewComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+
+  //Cliente
+  { path: 'market', component: MarketComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador, RolEnum.Cliente] } },
+  { path: 'cart', component: CartComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador, RolEnum.Cliente] } },
+
 
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 

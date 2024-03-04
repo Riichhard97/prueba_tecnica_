@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { FileService } from 'src/app/services/file.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,8 +10,11 @@ import Swal from 'sweetalert2';
 })
 export class ArticleCardComponent {
   @Input() article: any;
+  urlApiImage: string;
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private fileService: FileService) {
+    this.urlApiImage = this.fileService.apiUrlPathImage;
+  }
 
   addToCart(item: any): void {
     let article = { ...item };

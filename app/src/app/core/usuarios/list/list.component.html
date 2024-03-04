@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Listado de Usuarios</h2>
+    <div class="mb-3">
+        <button class="btn btn-success mr-2" (click)="create()">Crear Usuario</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre de Usuario</th>
+                <th>Correo</th>
+                <th>Cliente</th>
+                <th>Rol</th>
+                <th>Fecha de Último Acceso</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.nombreUsuario }}</td>
+                <td>{{ user.correo }}</td>
+                <td>{{ user.cliente }}</td>
+                <td>{{ user.rol }}</td>
+                <td>{{ user.fechaUltimoAcceso | date}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="editUser(user)">Editar</button>
+                    <button class="btn btn-danger ml-2" (click)="deleteUser(user)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

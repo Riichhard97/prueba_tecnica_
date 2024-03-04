@@ -35,8 +35,9 @@
                         <td><input class="form-control" type="number" style="width: 100px;"
                                 [(ngModel)]="article.cantidad "></td>
                         <td>{{ article.descripcion }}</td>
-                        <td>{{ article.precio | currency }}</td>
-                        <td>{{ article.precio * (article.cantidad ? article.cantidad : 0) | currency }}</td>
+                        <td>{{ article.precio | currency:"MXN":"symbol" }}</td>
+                        <td>{{ article.precio * (article.cantidad ? article.cantidad : 0) | currency:"MXN":"symbol" }}
+                        </td>
                         <td><button class="btn btn-danger btn-sm" (click)="removeArticle(article)">Eliminar</button>
                         </td>
                     </tr>

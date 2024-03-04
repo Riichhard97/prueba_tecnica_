@@ -2,7 +2,7 @@ export interface CartItem {
     codigo: string;
     descripcion: string;
     precio: number;
-    imagen: string;
+    image: string;
     stock: number;
     cantidad: number;
 }

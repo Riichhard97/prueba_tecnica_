@@ -11,12 +11,12 @@
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img [src]="item.imagen" class="card-img" alt="...">
+                        <img [src]="urlApiImg+item.image" class="card-img" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">{{ item.descripcion }}</h5>
-                            <p class="card-text">Precio: {{ item.precio | currency}}</p>
+                            <p class="card-text">Precio: {{ item.precio | currency:"MXN":"symbol"}}</p>
                             <div class="form-group">
                                 <label for="cantidad">Cantidad:</label>
                                 <input type="number" class="form-control" id="cantidad" [(ngModel)]="item.cantidad">

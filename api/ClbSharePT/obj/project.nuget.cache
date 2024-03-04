@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "cdtE8opyfuQwqZYn08cOmJX/6clrMDxxTP/ILO7CURRJN14Xrh83W7EnJi7t+HaPSa/XaaMD+6Z6loR0+/jMKg==",
+  "dgSpecHash": "N0OaJ5gBTOc50cOmQKXkao9JNbl0Rj/P8y9teiKUN+9XI7Kp1OgXIEFhJiHCEDhzdUpl2cFtc6mLiU59GnpBpQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gamer\\Desktop\\Prueba tecnica\\prueba_tenica\\api\\ClbSharePT\\ClbSharePT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gamer\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
-    "C:\\Users\\Gamer\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+    "C:\\Users\\Gamer\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Gamer\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Gamer\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Gamer\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

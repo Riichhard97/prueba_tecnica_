@@ -102,3 +102,12 @@ C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\obj\Debug\
 C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\obj\Debug\net5.0\PruebaTecnica.pdb
 C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\obj\Debug\net5.0\PruebaTecnica.genruntimeconfig.cache
 C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\obj\Debug\net5.0\ref\PruebaTecnica.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Gamer\Desktop\Prueba tecnica\prueba_tenica\api\PruebaTecnica\bin\Debug\net5.0\System.IO.Pipelines.dll

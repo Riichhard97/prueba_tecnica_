@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Article } from 'src/app/models/article';
 import { ArticleService } from 'src/app/services/article.service';
+import { FileService } from 'src/app/services/file.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,7 +13,10 @@ import Swal from 'sweetalert2';
 export class ArticleListComponent implements OnInit {
   articles: Article[] = [];
 
-  constructor(private router: Router, private articleService: ArticleService) { }
+  urlApiImg = '';
+  constructor(private router: Router, private articleService: ArticleService, private fileService: FileService) {
+    this.urlApiImg = fileService.apiUrlPathImage;
+  }
 
   ngOnInit(): void {
     this.loadArticles();
