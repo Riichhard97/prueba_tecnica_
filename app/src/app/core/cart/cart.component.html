@@ -1,0 +1,36 @@
+<div class="container">
+    <div style="display: flex;justify-content: space-between;">
+        <h2>Carrito de Compras</h2>
+        <button class="btn btn-danger" (click)="clearCart()">Vaciar Carrito</button>
+    </div>
+    <div class="pt-2" *ngIf="(cartItems$ | async) as cartItems; else loading">
+        <div *ngIf="cartItems.length === 0">
+            <p>El carrito está vacío.</p>
+        </div>
+        <div *ngFor="let item of cartItems">
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img [src]="item.imagen" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.descripcion }}</h5>
+                            <p class="card-text">Precio: {{ item.precio | currency}}</p>
+                            <div class="form-group">
+                                <label for="cantidad">Cantidad:</label>
+                                <input type="number" class="form-control" id="cantidad" [(ngModel)]="item.cantidad">
+                            </div>
+                            <button class=" btn btn-danger" (click)="removeFromCart(item)">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary w-100">Comprar </button>
+    </div>
+    <ng-template #loading>
+        <p>Cargando...</p>
+    </ng-template>
+</div>

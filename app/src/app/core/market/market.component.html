@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Listado de Artículos</h2>
+
+    <div>
+        <select class="form-control" [(ngModel)]="selectedStoreId" (change)="onStoreChange()">
+            <option value="">Seleccionar tienda</option>
+            <option *ngFor="let store of stores" [value]="store.id">{{ store.sucursal }}</option>
+        </select>
+    </div>
+
+    <div class="row pt-3">
+        <div class="col-md-4 pt-1" *ngFor="let article of storeSelected?.lstArticulos">
+            <app-article-card [article]="article"></app-article-card>
+        </div>
+    </div>
+</div>

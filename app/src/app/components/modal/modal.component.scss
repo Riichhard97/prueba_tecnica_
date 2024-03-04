@@ -1,0 +1,8 @@
+.show {
+    display: block !important;
+    visibility: visible;
+}
+
+::ng-deep .modal-backdrop {
+    background-color: rgba(163, 159, 159, 0.7) !important;
+}

@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>{{ editing ? 'Editar Cliente' : 'Agregar Nuevo Cliente' }}</h2>
+    <form (ngSubmit)="submitForm()" #customerForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="customer.nombre" name="nombre" required
+                #nombre="ngModel">
+            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="text-danger">
+                <div *ngIf="nombre.errors && nombre.errors['required']">
+                    El nombre es requerido.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" [(ngModel)]="customer.apellidos" name="apellidos"
+                required #apellidos="ngModel">
+            <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)" class="text-danger">
+                <div *ngIf="apellidos.errors && apellidos.errors['required']">
+                    Los apellidos son requeridos.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" [(ngModel)]="customer.direccion" name="direccion"
+                required #direccion="ngModel">
+            <div *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)" class="text-danger">
+                <div *ngIf="direccion.errors && direccion.errors['required']">
+                    La dirección es requerida.
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="customerForm.invalid">{{ editing ? 'Guardar Cambios' :
+            'Agregar' }}</button>
+    </form>
+</div>

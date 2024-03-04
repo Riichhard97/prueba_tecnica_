@@ -1,0 +1,15 @@
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ClbSharePT.csproj.AssemblyReference.cache
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ClbSharePT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ClbSharePT.AssemblyInfoInputs.cache
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ClbSharePT.AssemblyInfo.cs
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ClbSharePT.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\bin\Debug\net5.0\ClbSharePT.deps.json
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\bin\Debug\net5.0\ClbSharePT.dll
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\bin\Debug\net5.0\ClbSharePT.pdb
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\bin\Debug\net5.0\ClbModPT.dll
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\bin\Debug\net5.0\ClbModPT.pdb
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ClbSharePT.csproj.CopyComplete
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ClbSharePT.dll
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\refint\ClbSharePT.dll
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ClbSharePT.pdb
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbSharePT\obj\Debug\net5.0\ref\ClbSharePT.dll

@@ -1,0 +1,59 @@
+<!-- store-form.component.html -->
+<div class="container">
+    <h2>{{ store.id ? 'Editar Tienda' : 'Crear Tienda' }}</h2>
+    <form (ngSubmit)="save()">
+        <!-- Campos de la tienda -->
+        <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="store.sucursal" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Dirección:</label>
+            <input type="text" class="form-control" id="address" name="address" [(ngModel)]="store.direccion" required>
+        </div>
+    </form>
+    <div class="mt-4">
+        <div style="display: flex;justify-content: space-between;">
+            <h3>Artículos Asociados</h3>
+            <button type="button" class="btn btn-primary" (click)="openModal()">Agregar Artículo</button>
+        </div>
+        <div class="pt-2">
+            <table class="table" *ngIf="store.lstArticulos.length > 0">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Cantidad</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let article of store.lstArticulos">
+                        <td>{{ article.codigo }}</td>
+                        <td><input class="form-control" type="number" style="width: 100px;"
+                                [(ngModel)]="article.cantidad "></td>
+                        <td>{{ article.descripcion }}</td>
+                        <td>{{ article.precio | currency }}</td>
+                        <td>{{ article.precio * (article.cantidad ? article.cantidad : 0) | currency }}</td>
+                        <td><button class="btn btn-danger btn-sm" (click)="removeArticle(article)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <span *ngIf="store.lstArticulos.length == 0">
+            No hay articulos seleccionados...
+        </span>
+    </div>
+    <div class="pt-5">
+        <button type="submit" class="btn btn-primary" (click)="save()">Guardar</button>
+    </div>
+</div>
+
+<!-- article-modal.component.html -->
+<app-modal [isOpen]="modalOpen" [title]="'Agregar Artículo'" (closeModal)="closeModal()" [width]="500">
+    <app-add-article [articles]="articles" (articleSelected)="saveArticle($event)" *ngIf="modalOpen"></app-add-article>
+</app-modal>

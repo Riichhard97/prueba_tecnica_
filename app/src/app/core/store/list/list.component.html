@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Listado de Tiendas</h2>
+    <div class="mb-3">
+        <button class="btn btn-success mr-2" (click)="createStore()">Crear Tienda</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sucursal</th>
+                <th>Dirección</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let store of stores">
+                <td>{{ store.sucursal }}</td>
+                <td>{{ store.direccion }}</td>
+                <td>
+                    <button class="btn btn-primary mr-2" (click)="editStore(store)">Editar</button>
+                    <button class="btn btn-danger" (click)="deleteStore(store)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

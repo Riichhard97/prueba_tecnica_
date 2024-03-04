@@ -1,0 +1,15 @@
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\bin\Debug\net5.0\ClbDatPT.deps.json
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\bin\Debug\net5.0\ClbDatPT.dll
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\bin\Debug\net5.0\ClbDatPT.pdb
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\bin\Debug\net5.0\ClbModPT.dll
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\bin\Debug\net5.0\ClbModPT.pdb
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ClbDatPT.csproj.AssemblyReference.cache
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ClbDatPT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ClbDatPT.AssemblyInfoInputs.cache
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ClbDatPT.AssemblyInfo.cs
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ClbDatPT.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ClbDatPT.csproj.CopyComplete
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ClbDatPT.dll
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\refint\ClbDatPT.dll
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ClbDatPT.pdb
+C:\Users\Gamer\source\repos\PruebaTecnica\ClbDatPT\obj\Debug\net5.0\ref\ClbDatPT.dll

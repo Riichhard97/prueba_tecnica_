@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Listado de Artículos</h2>
+    <button class="btn btn-success" (click)="goToAddNew()">Crear Nuevo Artículo</button>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let article of articles">
+                <td>{{ article.codigo }}</td>
+                <td>{{ article.descripcion }}</td>
+                <td>{{ article.precio }}</td>
+                <td><img src="{{ article.image }}" alt="Imagen del artículo" style="max-width: 100px;"></td>
+                <td>
+                    <button class="btn btn-primary mr-2" (click)="goToEdit(article)">Editar</button>
+                    <button class="btn btn-danger" (click)="deleteArticle(article)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

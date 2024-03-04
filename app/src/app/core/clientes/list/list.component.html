@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Listado de Clientes</h2>
+
+    <div style="padding-top: 10px; padding-bottom: 10px;">
+        <button class="btn btn-success" (click)="addNewCustomer()">Agregar Nuevo Cliente</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Dirección</th>
+                <th>Acciones</th> <!-- Agregamos esta columna para las acciones -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers">
+                <td>{{ customer.nombre }}</td>
+                <td>{{ customer.apellidos }}</td>
+                <td>{{ customer.direccion }}</td>
+                <td>
+                    <!-- Botones para editar, eliminar -->
+                    <button class="btn btn-primary" (click)="editCustomer(customer.id!)">Editar</button>
+                    <button class="btn btn-danger" style="margin-left:10px;"
+                        (click)="deleteCustomer(customer)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
