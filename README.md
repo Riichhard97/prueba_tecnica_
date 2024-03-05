@@ -1,3 +1,6 @@
+***Importante***
+Antes de ejecutar la api o app, ejecutar el script de sql, este trae las tablas y datos necesarios para que el sistema funcione
+
 Se presenta una prueba técnica que incluye el diseño y la implementación de una base de datos SQL denominada "pt" (Prueba Técnica), diseñada para respaldar un sistema de gestión de tiendas en línea. Aunque la descripción de la base de datos proporcionada carece de detalles específicos, se ha desarrollado una estructura base.
 
 <img width="384" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/bf220df1-06aa-46ec-9111-c487553ebc64">
