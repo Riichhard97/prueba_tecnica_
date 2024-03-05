@@ -24,15 +24,27 @@ Login:
 Mensaje de error:
 <img width="648" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/1e7f4c9e-047b-4ca5-a30c-bbff9be64428">
 
+
+Listado de usuarios:
 <img width="1148" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/65dffe26-ac31-460d-9cda-2ddb92935ee0">
 
+
+Edicion de tienda:
 <img width="1179" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/d6aace7e-34ab-4b80-9853-56d4e94cd8b5">
 
+
+Edicion de tienda:
 <img width="1238" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/49d14670-db3b-435f-9fcb-98cb6f3da758">
 
+
+MarketPlace:
 <img width="1566" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/6f658b5f-2f4f-45dc-b7ad-76193a0fe69a">
 
+
+Carrito de compras:
 <img width="1300" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/d78567c3-b8ad-44e6-b887-ea0d61c06917">
+
+
 
 <img width="1238" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/c8c9eba9-efe7-4363-a9f5-d82103c08b83">
 
