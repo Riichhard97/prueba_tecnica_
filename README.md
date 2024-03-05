@@ -18,9 +18,10 @@ El sistema utiliza paginación del lado del servidor para optimizar el rendimien
 
 Algunas fotos del sistema:
 
-
+Login:
 <img width="758" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/4ce6cbd9-7004-4a15-9a0c-9e34a451dc6d">
 
+Mensaje de error:
 <img width="648" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/1e7f4c9e-047b-4ca5-a30c-bbff9be64428">
 
 <img width="1148" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/65dffe26-ac31-460d-9cda-2ddb92935ee0">
