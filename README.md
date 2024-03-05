@@ -11,7 +11,8 @@ Se ha implementado un script de base de datos que puede ejecutarse en SQL Server
 
 Se han definido dos roles principales en el sistema: administrador y cliente. Los usuarios que no esten identificados pueden navegar por la tienda, agregar elementos al carrito y realizar compras, pero se les solicitará autenticarse al momento de la compra.Los administradores tienen acceso a funciones administrativas para gestionar clientes, tiendas, usuarios, artículos y el historial de compras.
 
-Es importante tener en cuenta que la contraseña predeterminada para todos los usuarios es '123' por razones de simplificación y que el sistema utiliza paginación del lado del servidor para optimizar el rendimiento y la eficiencia en la manipulación de grandes conjuntos de datos.
+Es importante tener en cuenta que la contraseña predeterminada para todos los usuarios es '123', se encripto la contraseña utilizando sha2-256 y un salt para generar la contraseña encriptada
+El sistema utiliza paginación del lado del servidor para optimizar el rendimiento y la eficiencia en la manipulación de grandes conjuntos de datos.
 
 Algunas fotos del sistema:
 
