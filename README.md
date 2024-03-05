@@ -45,11 +45,10 @@ Carrito de compras:
 <img width="1300" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/d78567c3-b8ad-44e6-b887-ea0d61c06917">
 
 
-Compra realizada:
-<img width="1238" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/c8c9eba9-efe7-4363-a9f5-d82103c08b83">
 
-Historico de compras:
+Compra realizada:
 <img width="1281" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/cb08f9c6-a5a0-4edf-a7b6-c4c49116d710">
 
 
+Historico de compras:
 <img width="1083" alt="image" src="https://github.com/Riichhard97/prueba_tecnica_/assets/62078290/f434b483-bef7-4e65-99b1-9601f0e80015">
