@@ -10,7 +10,7 @@
 
     <div class="row pt-3">
         <div class="col-md-4 pt-1" *ngFor="let article of storeSelected?.lstArticulos">
-            <app-article-card [article]="article"></app-article-card>
+            <app-article-card [article]="article" [tienda]="storeSelected"></app-article-card>
         </div>
     </div>
 </div>

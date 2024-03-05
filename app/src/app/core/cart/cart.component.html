@@ -1,8 +1,10 @@
 <div class="container">
     <div style="display: flex;justify-content: space-between;">
         <h2>Carrito de Compras</h2>
+        <h3 *ngIf="tienda"> Tienda: {{tienda.sucursal}}</h3>
         <button class="btn btn-danger" (click)="clearCart()">Vaciar Carrito</button>
     </div>
+
     <div class="pt-2" *ngIf="(cartItems$ | async) as cartItems; else loading">
         <div *ngIf="cartItems.length === 0">
             <p>El carrito está vacío.</p>
@@ -18,17 +20,28 @@
                             <h5 class="card-title">{{ item.descripcion }}</h5>
                             <p class="card-text">Precio: {{ item.precio | currency:"MXN":"symbol"}}</p>
                             <div class="form-group">
-                                <label for="cantidad">Cantidad:</label>
-                                <input type="number" class="form-control" id="cantidad" [(ngModel)]="item.cantidad">
+                                <label for="cantidad">Stock: {{item.stock}}</label>
                             </div>
-                            <button class=" btn btn-danger" (click)="removeFromCart(item)">Eliminar</button>
+                            <div class="form-group">
+                                <label for="cantidad">Cantidad:</label>
+                                <input type="number" class="form-control" id="cantidad" min="0" max="{{ item.stock }}"
+                                    [(ngModel)]="item.cantidad">
+                                <div *ngIf="item.cantidad > item.stock" class="text-danger">
+                                    La cantidad seleccionada no puede ser mayor que el stock disponible ({{ item.stock
+                                    }})
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad">SubTotal: {{item.cantidad * item.precio |
+                                    currency:"MXN":"symbol"}}</label>
+                            </div>
+                            <button class="btn btn-danger" (click)="removeFromCart(item)">Eliminar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <button class="btn btn-primary w-100">Comprar </button>
+        <button class="btn btn-primary w-100" (click)="comprar()">Comprar </button>
     </div>
     <ng-template #loading>
         <p>Cargando...</p>

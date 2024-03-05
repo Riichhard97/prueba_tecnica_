@@ -17,7 +17,7 @@ import { RolEnum } from './models/enums/role-enum';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador, RolEnum.Cliente] } },
+  { path: 'home', component: HomeComponent },
 
   //Admin
   { path: 'customer-list', component: CilenteListComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
@@ -39,8 +39,8 @@ const routes: Routes = [
   { path: 'usuario-edicion/:id', component: UserNewComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
 
   //Cliente
-  { path: 'market', component: MarketComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador, RolEnum.Cliente] } },
-  { path: 'cart', component: CartComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador, RolEnum.Cliente] } },
+  { path: 'market', component: MarketComponent },
+  { path: 'cart', component: CartComponent },
 
 
   { path: '', redirectTo: '/login', pathMatch: 'full' },

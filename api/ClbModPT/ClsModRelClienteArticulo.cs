@@ -10,8 +10,8 @@ namespace ClbModPT
     {
         public Guid ClienteId { get; set; }
         public virtual ClsModCliente Cliente { get; set; }
-        public Guid TiendaId { get; set; }
-        public virtual ClsModTienda Tienda { get; set; }
+        public Guid ArticuloId { get; set; }
+        public virtual ClsModArticulo Articulo { get; set; }
         public int Cantidad { get; set; }
         public DateTime Fecha { get; set; }
     }

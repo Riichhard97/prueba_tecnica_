@@ -136,6 +136,7 @@ namespace ClbDatPT
                     command.Parameters.Add("@Correo", SqlDbType.VarChar).Value = modUsuario.Correo;
                     command.Parameters.Add("@Password", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     command.Parameters.Add("@RoleId", SqlDbType.UniqueIdentifier).Direction = ParameterDirection.Output;
+                    command.Parameters.Add("@ClientId", SqlDbType.UniqueIdentifier).Direction = ParameterDirection.Output;
                     command.Parameters.Add("@Salt", SqlDbType.VarBinary, 50).Direction = ParameterDirection.Output;
 
                     try
@@ -146,7 +147,9 @@ namespace ClbDatPT
                         string password = command.Parameters["@Password"].Value.ToString();
                         byte[] salt = (byte[])command.Parameters["@Salt"].Value;
                         Guid roleId = command.Parameters["@RoleId"].Value != DBNull.Value ? (Guid)command.Parameters["@RoleId"].Value : Guid.Empty;
+                        Guid ClientId = command.Parameters["@ClientId"].Value != DBNull.Value ? (Guid)command.Parameters["@ClientId"].Value : Guid.Empty;
 
+                        modUsuario.ClienteId = ClientId;
                         if (!string.IsNullOrEmpty(password) )
                         {
                             if(await VerifyPassword(modUsuario.Password, password, salt)) {
@@ -189,7 +192,8 @@ namespace ClbDatPT
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Email, modUsuario.Correo),
-                    new Claim(ClaimTypes.Role, modUsuario.RoleId.ToString())
+                    new Claim(ClaimTypes.Role, modUsuario.RoleId.ToString()),
+                    new Claim("Id", modUsuario.ClienteId.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

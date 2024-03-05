@@ -22,11 +22,10 @@ export const authGuard: CanActivateFn = (route, state) => {
 function isTokenExpired(token: string): boolean {
   try {
     const decodedToken: any = jwt_decode(token);
-    const expirationTime = decodedToken.exp * 1000; // Convertir a milisegundos
+    const expirationTime = decodedToken.exp * 1000;
     const currentTime = Date.now();
     return expirationTime < currentTime;
   } catch (error) {
-    // Si hay algún error al decodificar el token, asumimos que ha expirado
     return true;
   }
 }

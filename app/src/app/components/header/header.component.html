@@ -22,10 +22,10 @@
             <li *ngIf="menu.includes('usuarios')" class="nav-item">
                 <a class="nav-link" routerLink="/usuarios">Usuarios</a>
             </li>
-            <li *ngIf="menu.includes('market')" class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" routerLink="/market">Mercado</a>
             </li>
-            <li *ngIf="menu.includes('cart')" class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" routerLink="/cart">Carrito {{cartLength>0 ? '['+cartLength+']' : ''}} </a>
             </li>
             <li class="nav-item">

@@ -47,6 +47,8 @@ export class HeaderComponent implements OnInit {
           'cart'
         ]
       }
+
+
     }, 0);
   }
 

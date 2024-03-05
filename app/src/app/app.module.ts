@@ -24,6 +24,7 @@ import { UserListComponent } from './core/usuarios/list/list.component';
 import locale from '@angular/common/locales/es-MX';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
+import { ListComprasComponent } from './core/rel-cliente-articulo/list/list.component';
 
 registerLocaleData(locale, 'es');
 
@@ -45,7 +46,8 @@ registerLocaleData(locale, 'es');
     AddArticleComponent,
     ModalComponent,
     UserNewComponent,
-    UserListComponent
+    UserListComponent,
+    ListComprasComponent
   ],
   imports: [
     BrowserModule,
