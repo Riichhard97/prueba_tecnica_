@@ -30,15 +30,6 @@ export class HeaderComponent implements OnInit {
     setTimeout(() => {
       const roleId = localStorage.getItem('roleId')
       console.log(roleId)
-      if (roleId == RolEnum.Cliente) {
-        this.menu = [
-          'home',
-          'market',
-          'cart'
-        ]
-      }
-
-
       if (roleId == RolEnum.Administrador) {
         this.menu = [
           'home',
@@ -46,9 +37,13 @@ export class HeaderComponent implements OnInit {
           'store-list',
           'articles-list',
           'usuarios',
-          'market',
-          'cart',
           'compras'
+        ]
+      } else {
+        this.menu = [
+          'home',
+          'market',
+          'cart'
         ]
       }
 

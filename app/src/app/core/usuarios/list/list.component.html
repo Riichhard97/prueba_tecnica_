@@ -15,10 +15,13 @@
             </tr>
         </thead>
         <tbody>
+            <span *ngIf="users.length == 0">
+                No se encontraron resultados...
+            </span>
             <tr *ngFor="let user of users">
                 <td>{{ user.nombreUsuario }}</td>
                 <td>{{ user.correo }}</td>
-                <td>{{ user.cliente }}</td>
+                <td>{{ user.cliente != ' ' ? user.cliente : 'No aplica' }}</td>
                 <td>{{ user.rol }}</td>
                 <td>{{ user.fechaUltimoAcceso | date}}</td>
                 <td>

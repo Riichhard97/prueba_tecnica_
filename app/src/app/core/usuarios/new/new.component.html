@@ -33,7 +33,20 @@
                 </div>
             </div>
         </div>
+
         <div class="form-group">
+            <label for="roleId">Rol:</label>
+            <select class="form-control" id="roleId" [(ngModel)]="user.roleId" name="roleId" required #roleId="ngModel">
+                <option *ngFor="let role of roles" [value]="role.id">{{ role.rol }}</option>
+            </select>
+            <div *ngIf="roleId.invalid && (roleId.dirty || roleId.touched)" class="text-danger">
+                <div *ngIf="roleId.errors && roleId.errors['required']">
+                    El Role es requerido.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group" *ngIf="enumRol.Cliente == user.roleId.toUpperCase()">
             <label for="clienteId">Cliente:</label>
             <select class="form-control" id="clienteId" [(ngModel)]="user.clienteId" name="clienteId" required
                 #clienteId="ngModel">
@@ -43,17 +56,6 @@
             <div *ngIf="clienteId.invalid && (clienteId.dirty || clienteId.touched)" class="text-danger">
                 <div *ngIf="clienteId.errors && clienteId.errors['required']">
                     El Cliente es requerido.
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="roleId">Rol:</label>
-            <select class="form-control" id="roleId" [(ngModel)]="user.roleId" name="roleId" required #roleId="ngModel">
-                <option *ngFor="let role of roles" [value]="role.id">{{ role.rol }}</option>
-            </select>
-            <div *ngIf="roleId.invalid && (roleId.dirty || roleId.touched)" class="text-danger">
-                <div *ngIf="roleId.errors && roleId.errors['required']">
-                    El Role es requerido.
                 </div>
             </div>
         </div>

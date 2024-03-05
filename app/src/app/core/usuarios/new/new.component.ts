@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { RolService } from 'src/app/services/rol.service';
 import { Rol } from 'src/app/models/rol';
 import { ActivatedRoute, Router } from '@angular/router';
+import { RolEnum } from 'src/app/models/enums/role-enum';
 
 @Component({
   selector: 'app-user-new',
@@ -14,12 +15,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./new.component.scss']
 })
 export class UserNewComponent implements OnInit {
-  user: User = { nombreUsuario: '', correo: '', clienteId: '', roleId: '', fechaUltimoAcceso: new Date() };
+  user: User = { nombreUsuario: '', correo: '', roleId: '', fechaUltimoAcceso: new Date() };
   roles: Rol[] = [];
   clientes: Client[] = [];
   isEdit: boolean = false;
   userId: string = '';
 
+  enumRol = RolEnum;
   constructor(
     private userService: UserService,
     private rolService: RolService,

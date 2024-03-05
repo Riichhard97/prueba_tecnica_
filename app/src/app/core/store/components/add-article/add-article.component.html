@@ -15,6 +15,9 @@
                     placeholder="0">
             </div>
         </li>
+        <span *ngIf="visibleArticles.length == 0">
+            No se encontraron resultados...
+        </span>
     </ul>
 
     <div>

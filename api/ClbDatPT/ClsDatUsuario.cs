@@ -39,7 +39,7 @@ namespace ClbDatPT
                 parameters.Add("@Correo", usuario.Correo, DbType.String);
                 parameters.Add("@ContraseñaHash", usuario.Password, DbType.String);
                 parameters.Add("@Salt", salt, DbType.Binary);
-                parameters.Add("@ClienteId", usuario.ClienteId, DbType.Guid);
+                parameters.Add("@ClienteId", usuario.ClienteId != Guid.Empty ? usuario.ClienteId : null, DbType.Guid);
                 parameters.Add("@RoleId", usuario.RoleId, DbType.Guid);
 
                 var query = "SpUsuarioInsert";

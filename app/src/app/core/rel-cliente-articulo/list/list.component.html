@@ -10,6 +10,9 @@
             </tr>
         </thead>
         <tbody>
+            <span *ngIf="relClienteArticulos.length == 0">
+                No se encontraron resultados...
+            </span>
             <tr *ngFor="let relClienteArticulo of relClienteArticulos">
                 <td>{{ relClienteArticulo.cliente }}</td>
                 <td>{{ relClienteArticulo.articulo }}</td>

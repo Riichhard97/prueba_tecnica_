@@ -12,6 +12,9 @@
             </tr>
         </thead>
         <tbody>
+            <span *ngIf="articles.length == 0">
+                No se encontraron resultados...
+            </span>
             <tr *ngFor="let article of articles">
                 <td>{{ article.codigo }}</td>
                 <td>{{ article.descripcion }}</td>

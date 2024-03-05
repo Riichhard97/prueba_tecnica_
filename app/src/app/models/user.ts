@@ -2,7 +2,7 @@ export interface User {
     id?: string;
     nombreUsuario: string;
     correo: string;
-    clienteId: string;
+    clienteId?: string;
     roleId: string;
     fechaUltimoAcceso?: Date;
     password?: string;
