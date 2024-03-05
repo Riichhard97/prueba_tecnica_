@@ -1,0 +1,17 @@
+<nav aria-label="Page navigation" style="display: flex; justify-content: flex-end;">
+    <ul class="pagination">
+        <li class="page-item" [class.disabled]="pageNumber === 1">
+            <a class="page-link" (click)="onPageChange(pageNumber - 1)" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item" *ngFor="let page of getPages()" [class.active]="page === pageNumber">
+            <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
+        </li>
+        <li class="page-item" [class.disabled]="pageNumber * pageSize >= totalCount">
+            <a class="page-link" (click)="onPageChange(pageNumber + 1)" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

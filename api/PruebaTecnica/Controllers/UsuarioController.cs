@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Linq;
 using ClbSharePT;
 using System.Collections.Generic;
+using ClbModPT.Dto;
 
 namespace PruebaTecnica.Controllers
 {
@@ -19,13 +20,13 @@ namespace PruebaTecnica.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly ClsNegUsuario _usuarioNegocio;
+        private readonly ClsNegUsuario _clsNegUsuario;
         private readonly IConfiguration _configuration;
 
         public UsuarioController(IConfiguration configuration)
         {
             _configuration = configuration;
-            _usuarioNegocio = new ClsNegUsuario(_configuration);
+            _clsNegUsuario = new ClsNegUsuario(_configuration);
         }
        
         [HttpPost]
@@ -33,7 +34,7 @@ namespace PruebaTecnica.Controllers
         {
             try
             {
-                await _usuarioNegocio.Insert(usuario);
+                await _clsNegUsuario.Insert(usuario);
                 return new ApiResponse<Guid>(true, "Usuario creado correctamente", usuario.Id);
             }
             catch (Exception ex)
@@ -47,7 +48,7 @@ namespace PruebaTecnica.Controllers
         {
             try
             {
-                var usuarios = await _usuarioNegocio.GetAll();
+                var usuarios = await _clsNegUsuario.GetAll();
                 return new ApiResponse<IEnumerable<ClsModUsuario>>(true, "Usuarios obtenidos correctamente", usuarios);
             }
             catch (Exception ex)
@@ -61,7 +62,7 @@ namespace PruebaTecnica.Controllers
         {
             try
             {
-                var usuario = await _usuarioNegocio.GetById(id);
+                var usuario = await _clsNegUsuario.GetById(id);
                 if (usuario == null)
                 {
                     return NotFound(new ApiResponse<ClsModUsuario>(false, "Usuario no encontrado", null));
@@ -84,7 +85,7 @@ namespace PruebaTecnica.Controllers
                     return BadRequest(new ApiResponse<object>(false, "El ID del usuario no coincide con el ID proporcionado", null));
                 }
 
-                await _usuarioNegocio.Update(usuario);
+                await _clsNegUsuario.Update(usuario);
                 return new ApiResponse<object>(true, "Usuario actualizado correctamente", null);
             }
             catch (Exception ex)
@@ -98,7 +99,7 @@ namespace PruebaTecnica.Controllers
         {
             try
             {
-                await _usuarioNegocio.Delete(id);
+                await _clsNegUsuario.Delete(id);
                 return new ApiResponse<object>(true, "Usuario eliminado correctamente", null);
             }
             catch (Exception ex)
@@ -117,7 +118,7 @@ namespace PruebaTecnica.Controllers
                     return BadRequest("Correo y contraseña son obligatorios");
                 }
 
-                var token = await _usuarioNegocio.Login(usuario);
+                var token = await _clsNegUsuario.Login(usuario);
                 if (token == null)
                 {
                     return Unauthorized("Credenciales inválidas");
@@ -127,6 +128,21 @@ namespace PruebaTecnica.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, $"Error en el servidor: {ex.Message}");
+            }
+        }
+
+
+        [HttpPost("GetAllPaginate")]
+        public async Task<IActionResult> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            try
+            {
+                var response = await _clsNegUsuario.GetAllPaginate(paginateRequest);
+                return Ok(new ApiResponse<PaginateResult<ClsModUsuario>>(true, "Artículos obtenidos correctamente.", response));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<string>(false, $"Error al obtener los artículos: {ex.Message}", null));
             }
         }
     }

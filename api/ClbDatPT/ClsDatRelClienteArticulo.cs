@@ -6,6 +6,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
+using ClbModPT.Dto;
+
 namespace ClbDatPT
 {
     public class ClsDatRelClienteArticulo
@@ -55,6 +57,26 @@ namespace ClbDatPT
             using (var connection = new SqlConnection(_connectionString))
             {
                 await connection.ExecuteAsync("SpRelClienteArticuloDelete", new { Id = id }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public async Task<PaginateResult<ClsModRelClienteArticulo>> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new { PageNumber = paginateRequest.Page, PageSize = paginateRequest.PageSize };
+                var result = await connection.QueryMultipleAsync("SpRelClienteArticuloGetAllPaginate", parameters, commandType: CommandType.StoredProcedure);
+
+                IEnumerable<ClsModRelClienteArticulo> items = await result.ReadAsync<ClsModRelClienteArticulo>();
+                int totalCount = await result.ReadSingleAsync<int>();
+
+                return new PaginateResult<ClsModRelClienteArticulo>
+                {
+                    Items = items,
+                    TotalCount = totalCount,
+                    PageNumber = paginateRequest.Page,
+                    PageSize = paginateRequest.PageSize
+                };
             }
         }
     }

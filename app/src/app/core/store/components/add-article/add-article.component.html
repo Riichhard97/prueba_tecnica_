@@ -8,7 +8,7 @@
                 Cantidad
             </div>
         </div>
-        <li class="list-group-item" *ngFor="let article of articles">
+        <li class="list-group-item" *ngFor="let article of visibleArticles">
             <div style="display: flex;">
                 <div style="width: 200px;"> {{ article.descripcion +' :'}}</div>
                 <input type="number" style="width: 200px" class="form-control" [(ngModel)]="article.cantidad"

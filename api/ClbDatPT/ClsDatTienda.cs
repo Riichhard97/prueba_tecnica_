@@ -123,5 +123,28 @@ namespace ClbDatPT
                     Telefono = objModTienda.Telefono },
                  transaction, commandType: CommandType.StoredProcedure);
         }
+
+
+        public async Task<PaginateResult<ClsModTienda>> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new { PageNumber = paginateRequest.Page, PageSize = paginateRequest.PageSize };
+                var result = await connection.QueryMultipleAsync("SpTiendaGetAllPaginate", parameters, commandType: CommandType.StoredProcedure);
+
+
+                IEnumerable<ClsModTienda> items = await result.ReadAsync<ClsModTienda>();
+
+                int totalCount = await result.ReadSingleAsync<int>();
+
+                return new PaginateResult<ClsModTienda>
+                {
+                    Items = items,
+                    TotalCount = totalCount,
+                    PageNumber = paginateRequest.Page,
+                    PageSize = paginateRequest.PageSize
+                };
+            }
+        }
     }
 }

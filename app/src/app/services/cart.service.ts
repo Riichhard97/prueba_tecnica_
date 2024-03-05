@@ -9,7 +9,19 @@ export class CartService {
   private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
   cartItems$ = this.cartItemsSubject.asObservable();
 
-  constructor() { }
+  private localStorageKey = 'cartItems';
+
+  constructor() {
+    const storedCartItems = localStorage.getItem(this.localStorageKey);
+    if (storedCartItems) {
+      this.cartItemsSubject.next(JSON.parse(storedCartItems));
+    }
+  }
+
+  private updateCartItems(cartItems: CartItem[]): void {
+    this.cartItemsSubject.next(cartItems);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(cartItems));
+  }
 
   addToCart(item: CartItem): void {
     const currentItems = this.cartItemsSubject.getValue();
@@ -19,16 +31,16 @@ export class CartService {
     } else {
       currentItems.push(item);
     }
-    this.cartItemsSubject.next(currentItems);
+    this.updateCartItems(currentItems);
   }
 
   removeFromCart(item: CartItem): void {
     const currentItems = this.cartItemsSubject.getValue();
     const updatedItems = currentItems.filter(i => i.codigo !== item.codigo);
-    this.cartItemsSubject.next(updatedItems);
+    this.updateCartItems(updatedItems);
   }
 
   clearCart(): void {
-    this.cartItemsSubject.next([]);
+    this.updateCartItems([]);
   }
 }

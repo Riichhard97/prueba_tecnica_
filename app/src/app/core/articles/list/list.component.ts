@@ -12,6 +12,9 @@ import Swal from 'sweetalert2';
 })
 export class ArticleListComponent implements OnInit {
   articles: Article[] = [];
+  totalCount: number = 0;
+  pageNumber = 1;
+  pageSize = 10;
 
   urlApiImg = '';
   constructor(private router: Router, private articleService: ArticleService, private fileService: FileService) {
@@ -22,9 +25,15 @@ export class ArticleListComponent implements OnInit {
     this.loadArticles();
   }
 
+  onPageChange(pageNumber: number): void {
+    this.pageNumber = pageNumber;
+    this.loadArticles();
+  }
+
   loadArticles(): void {
-    this.articleService.getAll().subscribe((response) => {
-      this.articles = response;
+    this.articleService.getAllPaginate(this.pageNumber, this.pageSize).subscribe(result => {
+      this.articles = result.items;
+      this.totalCount = result.totalCount;
     });
   }
 

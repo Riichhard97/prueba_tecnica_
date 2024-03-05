@@ -25,6 +25,7 @@ import locale from '@angular/common/locales/es-MX';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import { ListComprasComponent } from './core/rel-cliente-articulo/list/list.component';
+import { PaginatonComponent } from './components/paginaton/paginaton.component';
 
 registerLocaleData(locale, 'es');
 
@@ -47,7 +48,8 @@ registerLocaleData(locale, 'es');
     ModalComponent,
     UserNewComponent,
     UserListComponent,
-    ListComprasComponent
+    ListComprasComponent,
+    PaginatonComponent
   ],
   imports: [
     BrowserModule,

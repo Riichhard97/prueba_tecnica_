@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ListPaginateComponent } from 'src/app/components/list-paginate-component';
 import { Client } from 'src/app/models/client';
 import { ClientService } from 'src/app/services/client.service';
 import Swal from 'sweetalert2';
@@ -9,18 +10,21 @@ import Swal from 'sweetalert2';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class CilenteListComponent implements OnInit {
+export class CilenteListComponent extends ListPaginateComponent implements OnInit {
   customers: Client[] = [];
 
-  constructor(private router: Router, private clientService: ClientService) { }
-
-  ngOnInit(): void {
-    this.loadCustomers();
+  constructor(private router: Router, private clientService: ClientService) {
+    super();
   }
 
-  loadCustomers(): void {
-    this.clientService.getAll().subscribe((response) => {
-      this.customers = response;
+  ngOnInit(): void {
+    this.load();
+  }
+
+  override load(): void {
+    this.clientService.getAllPaginate(this.pageNumber, this.pageSize).subscribe(result => {
+      this.customers = result.items;
+      this.totalCount = result.totalCount;
     });
   }
 

@@ -1,23 +1,25 @@
 <div class="container">
-    <h2>Compras</h2>
+    <h2>Historico de compras</h2>
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Cliente ID</th>
-                <th>Tienda ID</th>
+                <th>Cliente</th>
+                <th>Articulo</th>
                 <th>Cantidad</th>
                 <th>Fecha</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let relClienteArticulo of relClienteArticulos">
-                <td>{{ relClienteArticulo.id }}</td>
-                <td>{{ relClienteArticulo.clienteId }}</td>
-                <td>{{ relClienteArticulo.tiendaId }}</td>
+                <td>{{ relClienteArticulo.cliente }}</td>
+                <td>{{ relClienteArticulo.articulo }}</td>
                 <td>{{ relClienteArticulo.cantidad }}</td>
                 <td>{{ relClienteArticulo.fecha | date }}</td>
             </tr>
         </tbody>
     </table>
+
+    <app-pagination [pageNumber]="pageNumber" [pageSize]="pageSize" [totalCount]="totalCount"
+        (pageChange)="onPageChange($event)">
+    </app-pagination>
 </div>

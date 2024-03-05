@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ClbSharePT;
 using System.Collections.Generic;
 using ClbNegPT.Coordinator;
+using ClbModPT.Dto;
 
 namespace PruebaTecnica.Controllers
 {
@@ -96,6 +97,20 @@ namespace PruebaTecnica.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, new ApiResponse<string>(false, $"Error al eliminar la tienda: {ex.Message}", null));
+            }
+        }
+
+        [HttpPost("GetAllPaginate")]
+        public async Task<IActionResult> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            try
+            {
+                var articulos = await _objNegTienda.GetAllPaginate(paginateRequest);
+                return Ok(new ApiResponse<PaginateResult<ClsModTienda>>(true, "Artículos obtenidos correctamente.", articulos));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<string>(false, $"Error al obtener los artículos: {ex.Message}", null));
             }
         }
 

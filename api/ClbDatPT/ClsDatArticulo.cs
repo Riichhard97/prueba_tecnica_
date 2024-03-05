@@ -1,4 +1,5 @@
 ﻿using ClbModPT;
+using ClbModPT.Dto;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -80,6 +81,27 @@ namespace ClbDatPT
             {
                 tiendaId = tiendaId
             }, transaction, commandType: CommandType.StoredProcedure);
+        }
+
+        public async Task<PaginateResult<ClsModArticulo>> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new { PageNumber = paginateRequest.Page, PageSize = paginateRequest.PageSize };
+                var result = await connection.QueryMultipleAsync("SpArticulosGetAllPaginate", parameters, commandType: CommandType.StoredProcedure);
+
+                int totalCount = await result.ReadSingleAsync<int>();
+
+                IEnumerable<ClsModArticulo> items = await result.ReadAsync<ClsModArticulo>();
+
+                return new PaginateResult<ClsModArticulo>
+                {
+                    Items = items,
+                    TotalCount = totalCount,
+                    PageNumber = paginateRequest.Page,
+                    PageSize = paginateRequest.PageSize
+                };
+            }
         }
     }
 }

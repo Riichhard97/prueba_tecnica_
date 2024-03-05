@@ -8,6 +8,7 @@ import { RelClienteArticuloService } from 'src/app/services/rel-cliente-articulo
 import Swal from 'sweetalert2';
 import jwt_decode from "jwt-decode";
 import { StoreService } from 'src/app/services/store.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -20,7 +21,7 @@ export class CartComponent implements OnInit {
 
   tienda: any;
   tiendaId: string = '';
-  constructor(private cartService: CartService, private fileService: FileService, private relClienteArticuloService: RelClienteArticuloService, private storeService: StoreService) {
+  constructor(private cartService: CartService, private fileService: FileService, private relClienteArticuloService: RelClienteArticuloService, private storeService: StoreService, private router: Router) {
     this.urlApiImg = fileService.apiUrlPathImage;
   }
 
@@ -90,6 +91,15 @@ export class CartComponent implements OnInit {
   }
 
   comprar() {
+    if (!localStorage.getItem('token')) {
+      Swal.fire(
+        'Usuario no identificado',
+        'Para poder terminar tu compra, debes de identificarte.',
+        'warning'
+      );
+
+      this.router.navigateByUrl('/login');
+    }
     const decodedToken: any = jwt_decode(localStorage.getItem("token")!);
     const clientId = decodedToken.Id;
 

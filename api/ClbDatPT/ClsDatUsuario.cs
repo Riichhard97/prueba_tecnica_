@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using ClbModPT;
 using System.Collections;
 using System.Security.Authentication;
+using ClbModPT.Dto;
 
 namespace ClbDatPT
 {
@@ -229,6 +230,29 @@ namespace ClbDatPT
             var passwordGenerateByStoreSalt = await GeneratePassword(enteredPassword, storedSalt);
 
             return storedHash == passwordGenerateByStoreSalt;
+        }
+
+
+        public async Task<PaginateResult<ClsModUsuario>> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new { PageNumber = paginateRequest.Page, PageSize = paginateRequest.PageSize };
+                var result = await connection.QueryMultipleAsync("SpUsuarioGetAllPaginate", parameters, commandType: CommandType.StoredProcedure);
+
+
+                IEnumerable<ClsModUsuario> items = await result.ReadAsync<ClsModUsuario>();
+
+                int totalCount = await result.ReadSingleAsync<int>();
+
+                return new PaginateResult<ClsModUsuario>
+                {
+                    Items = items,
+                    TotalCount = totalCount,
+                    PageNumber = paginateRequest.Page,
+                    PageSize = paginateRequest.PageSize
+                };
+            }
         }
     }
 }

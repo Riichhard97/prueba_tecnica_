@@ -1,4 +1,5 @@
 ﻿using ClbModPT;
+using ClbModPT.Dto;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -62,6 +63,29 @@ namespace ClbDatPT
                 parameters.Add("@ClientId", clienteId, DbType.Guid);
 
                 await connection.ExecuteAsync("SpClienteDelete", parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+
+        public async Task<PaginateResult<ClsModCliente>> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new { PageNumber = paginateRequest.Page, PageSize = paginateRequest.PageSize };
+                var result = await connection.QueryMultipleAsync("SpClienteGetAllPaginate", parameters, commandType: CommandType.StoredProcedure);
+
+
+                IEnumerable<ClsModCliente> items = await result.ReadAsync<ClsModCliente>();
+
+                int totalCount = await result.ReadSingleAsync<int>();
+
+                return new PaginateResult<ClsModCliente>
+                {
+                    Items = items,
+                    TotalCount = totalCount,
+                    PageNumber = paginateRequest.Page,
+                    PageSize = paginateRequest.PageSize
+                };
             }
         }
 

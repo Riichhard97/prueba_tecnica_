@@ -28,4 +28,8 @@
             </tr>
         </tbody>
     </table>
+
+    <app-pagination [pageNumber]="pageNumber" [pageSize]="pageSize" [totalCount]="totalCount"
+        (pageChange)="onPageChange($event)">
+    </app-pagination>
 </div>

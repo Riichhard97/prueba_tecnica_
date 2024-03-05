@@ -3,26 +3,29 @@ import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { ListPaginateComponent } from 'src/app/components/list-paginate-component';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent extends ListPaginateComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private userService: UserService, private router: Router) { }
-
-  ngOnInit(): void {
-    this.loadUsers();
+  constructor(private userService: UserService, private router: Router) {
+    super();
   }
 
-  loadUsers(): void {
-    this.userService.getAllUsers().subscribe(
-      (data: User[]) => {
-        this.users = data;
-      },
+  ngOnInit(): void {
+    this.load();
+  }
+
+  override load(): void {
+    this.userService.getAllPaginate(this.pageNumber, this.pageSize).subscribe(result => {
+      this.users = result.items;
+      this.totalCount = result.totalCount;
+    },
       (error) => {
         console.error('Error al cargar usuarios:', error);
       }
@@ -56,7 +59,7 @@ export class UserListComponent implements OnInit {
               'success'
             );
             // Eliminación exitosa, recargar la lista de usuarios
-            this.loadUsers();
+            this.load();
           },
           (error) => {
             console.error('Error al eliminar usuario:', error);

@@ -63,7 +63,7 @@ namespace ClbNegPT.Coordinator
                         await _negocioTienda.Update(tienda, transaction);
 
                         // Eliminar todas las relaciones de artículos de la tienda
-                        await _negocioArticulo.DeleteRelByTiendaId(tienda.Id, transaction);
+                        await _negocioArticulo.DeleteByTiendaId(tienda.Id, transaction);
 
                         // Insertar las nuevas relaciones de artículos de la tienda
                         foreach (var articulo in tienda.lstArticulos)
@@ -91,7 +91,7 @@ namespace ClbNegPT.Coordinator
                     try
                     {
                         // Eliminar todas las relaciones de artículos de la tienda
-                        await _negocioArticulo.DeleteRelByTiendaId(tiendaId, transaction);
+                        await _negocioArticulo.DeleteByTiendaId(tiendaId, transaction);
 
                         // Eliminar la tienda
                         await _negocioTienda.Delete(tiendaId, transaction);

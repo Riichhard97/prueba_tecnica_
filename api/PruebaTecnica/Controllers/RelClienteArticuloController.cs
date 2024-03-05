@@ -69,5 +69,20 @@ namespace PruebaTecnica.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+
+        [HttpPost("GetAllPaginate")]
+        public async Task<IActionResult> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            try
+            {
+                var articulos = await _objNegRelClienteArticulo.GetAllPaginate(paginateRequest);
+                return Ok(new ApiResponse<PaginateResult<ClsModRelClienteArticulo>>(true, "Artículos obtenidos correctamente.", articulos));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<string>(false, $"Error al obtener los artículos: {ex.Message}", null));
+            }
+        }
     }
 }

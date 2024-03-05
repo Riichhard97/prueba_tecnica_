@@ -5,6 +5,7 @@ import { catchError, map } from 'rxjs/operators';
 import { environment } from '../enviroment';
 import { Client } from '../models/client';
 import { ApiResponse } from '../models/ApiResponse';
+import { PaginateResponse } from '../models/dto/paginate-response';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,18 @@ export class ClientService {
   private apiUrl = environment.apiUrl + '/Cliente';
 
   constructor(private http: HttpClient) { }
+
+  getAllPaginate(page: number, pageSize: number): Observable<PaginateResponse<Client>> {
+    const request = { page, pageSize }
+    return this.http.post<ApiResponse<PaginateResponse<Client>>>(this.apiUrl + '/GetAllPaginate', request)
+      .pipe(
+        map(response => response.data),
+        catchError(error => {
+          console.error('Error al obtener los artículos paginados:', error);
+          return throwError(error);
+        })
+      );
+  }
 
   getAll(): Observable<Client[]> {
     return this.http.get<ApiResponse<Client[]>>(this.apiUrl).pipe(

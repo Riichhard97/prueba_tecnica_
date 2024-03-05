@@ -6,6 +6,7 @@ using ClbModPT;
 using Microsoft.Extensions.Configuration;
 using ClbSharePT;
 using System.Collections.Generic;
+using ClbModPT.Dto;
 
 namespace PruebaTecnica.Controllers
 {
@@ -21,7 +22,7 @@ namespace PruebaTecnica.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> InsertarArticulo([FromBody] ClsModArticulo modArticulo)
+        public async Task<IActionResult> Insert([FromBody] ClsModArticulo modArticulo)
         {
             try
             {
@@ -53,7 +54,7 @@ namespace PruebaTecnica.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ObtenerArticulos()
+        public async Task<IActionResult> GetAll()
         {
             try
             {
@@ -66,8 +67,23 @@ namespace PruebaTecnica.Controllers
             }
         }
 
+        [HttpPost("GetAllPaginate")]
+        public async Task<IActionResult> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            try
+            {
+                var articulos = await _negocioArticulo.GetAllPaginate(paginateRequest);
+                return Ok(new ApiResponse<PaginateResult<ClsModArticulo>>(true, "Artículos obtenidos correctamente.", articulos));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<string>(false, $"Error al obtener los artículos: {ex.Message}", null));
+            }
+        }
+
+
         [HttpPut("{id}")]
-        public async Task<IActionResult> ActualizarArticulo(Guid id, ClsModArticulo articulo)
+        public async Task<IActionResult> Update(Guid id, ClsModArticulo articulo)
         {
             if (id != articulo.Id)
             {
@@ -86,7 +102,7 @@ namespace PruebaTecnica.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> EliminarArticulo(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             try
             {

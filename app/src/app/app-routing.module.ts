@@ -14,6 +14,7 @@ import { UserNewComponent } from './core/usuarios/new/new.component';
 import { UserListComponent } from './core/usuarios/list/list.component';
 import { authGuard } from './guard/auth.guard';
 import { RolEnum } from './models/enums/role-enum';
+import { ListComprasComponent } from './core/rel-cliente-articulo/list/list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'edit-article/:id', component: CreateArticleComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
 
   { path: 'usuarios', component: UserListComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
+  { path: 'compras', component: ListComprasComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
 
   { path: 'usuario-nuevo', component: UserNewComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
   { path: 'usuario-edicion/:id', component: UserNewComponent, canActivate: [authGuard], data: { rolPermitidos: [RolEnum.Administrador] } },
@@ -43,7 +45,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
 
 
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 
 ];
 

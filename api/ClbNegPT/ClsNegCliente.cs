@@ -1,5 +1,6 @@
 ﻿using ClbDatPT;
 using ClbModPT;
+using ClbModPT.Dto;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,12 @@ namespace ClbNegPT
         public async Task<ClsModCliente> GetById(string id)
         {
             return await _clienteData.GetById(id);
+        }
+
+        public async Task<PaginateResult<ClsModCliente>> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            return await _clienteData.GetAllPaginate(paginateRequest);
+
         }
     }
 }

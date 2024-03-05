@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
 
   ]
 
+  anyUserLogged = false;
+
   constructor(private router: Router, private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class HeaderComponent implements OnInit {
       this.cartLength = items.length;
     })
 
+    this.anyUserLogged = localStorage.getItem('token') != null;
     this.createMenu();
   }
   createMenu() {
@@ -44,7 +47,8 @@ export class HeaderComponent implements OnInit {
           'articles-list',
           'usuarios',
           'market',
-          'cart'
+          'cart',
+          'compras'
         ]
       }
 

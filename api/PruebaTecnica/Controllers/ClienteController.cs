@@ -1,4 +1,5 @@
 ﻿using ClbModPT;
+using ClbModPT.Dto;
 using ClbNegPT;
 using ClbSharePT;
 using Microsoft.AspNetCore.Mvc;
@@ -20,8 +21,22 @@ namespace PruebaTecnica.Controllers
             _negocioCliente = new ClsNegCliente(configuration);
         }
 
+        [HttpPost("GetAllPaginate")]
+        public async Task<IActionResult> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+            try
+            {
+                var response = await _negocioCliente.GetAllPaginate(paginateRequest);
+                return Ok(new ApiResponse<PaginateResult<ClsModCliente>>(true, "clientes obtenidos correctamente.", response));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<string>(false, $"Error al obtener los clientes: {ex.Message}", null));
+            }
+        }
+
         [HttpPost]
-        public async Task<IActionResult> InsertarCliente([FromBody] ClsModCliente modCliente)
+        public async Task<IActionResult> Insert([FromBody] ClsModCliente modCliente)
         {
             try
             {
@@ -35,7 +50,7 @@ namespace PruebaTecnica.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ObtenerClientes()
+        public async Task<IActionResult> GetAll()
         {
             try
             {
@@ -70,7 +85,7 @@ namespace PruebaTecnica.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> ActualizarCliente(Guid id, ClsModCliente cliente)
+        public async Task<IActionResult> Update(Guid id, ClsModCliente cliente)
         {
             try
             {
@@ -89,7 +104,7 @@ namespace PruebaTecnica.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> EliminarCliente(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             try
             {

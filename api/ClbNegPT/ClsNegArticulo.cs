@@ -1,10 +1,12 @@
 ﻿using ClbDatPT;
 using ClbModPT;
+using ClbModPT.Dto;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace ClbNegPT
 {
@@ -48,9 +50,14 @@ namespace ClbNegPT
             await _articuloData.InsertRel(articulo, tiendaId, transaction);
         }
 
-        public async Task DeleteRelByTiendaId(Guid tiendaId, SqlTransaction transaction)
+        public async Task DeleteByTiendaId(Guid tiendaId, SqlTransaction transaction)
         {
             await _articuloData.DeleteRelByTiendaId( tiendaId, transaction);
+        }
+
+        public async Task<PaginateResult<ClsModArticulo>> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+           return await _articuloData.GetAllPaginate(paginateRequest);
         }
     }
 }

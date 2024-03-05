@@ -1,10 +1,12 @@
 ﻿using ClbDatPT;
 using ClbModPT;
+using ClbModPT.Dto;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace ClbNegPT
 {
@@ -51,6 +53,11 @@ namespace ClbNegPT
         public async Task Update(ClsModTienda tienda, SqlTransaction transaction)
         {
             await _tiendaData.Update(tienda, transaction);
+        }
+
+        public async Task<PaginateResult<ClsModTienda>> GetAllPaginate(PaginateRequest paginateRequest)
+        {
+           return await _tiendaData.GetAllPaginate(paginateRequest);
         }
     }
 }

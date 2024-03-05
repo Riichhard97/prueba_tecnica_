@@ -1,7 +1,9 @@
 export interface RelClienteArticulo {
     id: string;
     clienteId: string;
-    tiendaId: string;
+    articuloId: string;
+    cliente?: string;
+    articulo?: string;
     cantidad: number;
     fecha: Date;
 }

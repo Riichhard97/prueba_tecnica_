@@ -20,7 +20,7 @@
         <div class="form-group">
             <label for="correo">Correo:</label>
             <input type="email" class="form-control" id="correo" [(ngModel)]="user.correo" name="correo" required
-                #correo="ngModel">
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #correo="ngModel">
             <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="text-danger">
                 <div *ngIf="correo.errors && correo.errors['required']">
                     El correo es requerido.
@@ -28,13 +28,17 @@
                 <div *ngIf="correo.errors && correo.errors['email']">
                     El correo debe ser válido.
                 </div>
+                <div *ngIf="correo.errors && correo.errors['pattern']">
+                    El correo debe tener un formato válido.
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label for="clienteId">Cliente:</label>
             <select class="form-control" id="clienteId" [(ngModel)]="user.clienteId" name="clienteId" required
                 #clienteId="ngModel">
-                <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }}</option>
+                <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre+' '+cliente.apellidos }}
+                </option>
             </select>
             <div *ngIf="clienteId.invalid && (clienteId.dirty || clienteId.touched)" class="text-danger">
                 <div *ngIf="clienteId.errors && clienteId.errors['required']">
